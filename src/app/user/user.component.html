@@ -1,0 +1,30 @@
+<section class="vh-50">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong cardShadow" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <h3 class="mb-5">Login</h3>
+              <div class="alert alert-warning" *ngIf="invalidLogin"> {{errorMessage}}</div>
+              <div class="form-outline mb-4">
+                <input class="form-control form-control-lg" type="text" name="username" [(ngModel)]="username" placeholder="Username"/>
+              </div>
+  
+              <div class="form-outline mb-4">
+                <input type="password" name="password" [(ngModel)]="password" class="form-control form-control-lg"  placeholder="Password"/>
+              </div>
+              <button class="btn btn-primary btn-lg btn-block" (click)=handleBasicLogin()>Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div class="container">
+<div class="alert alert-warning"*ngIf="invalidLogin"> {{errorMessage}}</div>
+User Name : <input type="text" name="username" [(ngModel)]="username">
+Password : <input type="password" name="password" [(ngModel)]="password" >
+<br>
+<button class="btn btn-success"(click)=handleBasicLogin()>Login</button>
+</div> -->

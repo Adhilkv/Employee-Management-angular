@@ -1,0 +1,47 @@
+<h1 class="display-3" >Welcome, {{AuthenticatedUserData.firstName}} {{AuthenticatedUserData.lastName}}</h1>
+
+<br>
+<div *ngIf="currentFile" class="progress">
+    <div
+      class="progress-bar progress-bar-info progress-bar-striped"
+      role="progressbar"
+      attr.aria-valuenow="{{ progress }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [ngStyle]="{ width: progress + '%' }"
+    >
+      {{ progress }}%
+    </div>
+  </div>
+ 
+  <label class="btn btn-default">
+    <input type="file" (change)="selectFile($event)" />
+  </label>
+  <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
+    Upload
+  </button>
+ 
+  <div class="alert alert-light" role="alert">{{ Uploadmessage }}</div>
+  
+  <div class="container">
+    <table class="table table-striped table-hover">
+      <thead>
+          <th style="text-align: center;">File Name</th>
+          <th>Created Date</th>
+          <th>Download</th>
+          <th>Delete</th>
+          <!-- <th>Update</th>-->
+        
+      </thead>
+
+      <tbody>
+          <tr *ngFor="let file of fileInfos | async">
+              <td> <a href="{{ file.url }}">{{ file.name }}</a></td> 
+              <!-- <td> {{ file.name }}</td> -->
+              <td> {{ file.createdDate | date}} </td>
+              <td><button  class="btn btn-success"(click)="DownloadFile(file.id,file.name)" > Download</button></td> 
+              <td><button  class="btn btn-danger" (click)="deleteFile(file.id)" >Delete</button></td> 
+          </tr>
+      </tbody>
+  </table>
+</div>

@@ -1,0 +1,21 @@
+table {
+    /* border-width: 3px;
+    border-style: groove; */
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+th {
+    height: 45px;
+    vertical-align: middle;
+}
+
+.container
+{
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+}

@@ -1,0 +1,43 @@
+<h1>Update</h1> 
+
+<div class="container">
+     <div class="alert alert-light" *ngIf="SaveForm.invalid">Please Enter All Values</div> 
+    <form (ngSubmit)="!SaveForm.invalid && saveTodo()" #SaveForm="ngForm">
+    <!-- <form (ngSubmit)="saveTodo()" > -->
+
+    <fieldset class="form-group">
+        <label class="form-label" >Username : </label>
+        <input type="text" class="form-control" name="userName" [(ngModel)]="User.userName" required="required" >
+    </fieldset> 
+    <br>
+
+    <fieldset class="form-group">
+        <label class="form-label" >First Name : </label>
+        <input type="text" class="form-control" name="firstName" [(ngModel)]="User.firstName" required="required" >
+    </fieldset> 
+    <br>
+
+    <fieldset class="form-group">
+        <label class="form-label" >last Name : </label>
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="User.lastName" required="required" >
+    </fieldset> 
+    <br>
+
+    
+    <fieldset class="form-group" *ngIf="!(this.UserName != 'New')">
+        <label class="form-label" >New Password : </label>
+        <input type="text" class="form-control" name="password" [(ngModel)]="User.password" required="required">
+        <br>
+    </fieldset> 
+    
+
+    <fieldset class="form-group">
+        <label class="form-label" >Department : </label>
+        <input type="text" class="form-control" name="department" [(ngModel)]="User.department" required="required" >
+    </fieldset> 
+    <br>
+
+    <button type="submit" class="btn btn-success">Save</button>
+
+</form>
+</div>
